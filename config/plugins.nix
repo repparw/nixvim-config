@@ -98,12 +98,10 @@
     obsidian = {
       enable = true;
       settings = {
-        workspaces = [
-          {
-            name = "obsidian";
-            path = "~/Documents/obsidian";
-          }
-        ];
+        workspaces.vault = {
+          name = "obsidian";
+          path = "~/Documents/obsidian";
+        };
         mappings = {
           "<cr>" = {
             action = "require('obsidian').util.smart_action";
