@@ -4,11 +4,6 @@
     ./lsp.nix
     ./plugins.nix
   ];
-  enable = true;
-  defaultEditor = true;
-
-  nixpkgs.useGlobalPackages = true;
-
   files = {
     "ftplugin/lua.lua" = {};
   };
