@@ -8,17 +8,6 @@
     "ftplugin/lua.lua" = {};
   };
 
-  colorscheme = "gruvbox";
-
-  colorschemes.gruvbox = {
-    enable = true;
-    settings = {
-      transparent_mode = true;
-    };
-  };
-  colorschemes.rose-pine.enable = true;
-  colorschemes.tokyonight.enable = true;
-
   globals = {
     have_nerd_font = true;
     mapleader = " ";
