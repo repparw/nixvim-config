@@ -16,9 +16,9 @@
 
   highlightOverride = {
     highlightOverride = {
-      LineNr.bg = null;
-      LineNrAbove.bg = null;
-      LineNrBelow.bg = null;
+      LineNr.guibg = null;
+      LineNrAbove.guibg = null;
+      LineNrBelow.guibg = null;
     };
   };
 
