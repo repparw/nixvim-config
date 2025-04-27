@@ -10,7 +10,7 @@ Descriptions of all the config files/plugins used in this configuration.
 | cmp | Advanced completion with multiple sources including LSP, buffer, path |
 | colorizer | Highlights color codes in files |
 | conform-nvim | Code formatting with support for multiple languages |
-| default.nix | Core configuration including colorscheme (gruvbox) and basic settings |
+| default.nix | Core configuration |
 | gitsigns | Git decorations showing changes in the buffer |
 | keymaps.nix | Custom keybindings for improved workflow |
 | lsp.nix | Language Server Protocol support with multiple language servers |
@@ -34,7 +34,6 @@ Descriptions of all the config files/plugins used in this configuration.
 - Modern UI elements with noice and notify
 - LaTeX support through vimtex
 - Obsidian note-taking integration
-- Multiple colorscheme options (gruvbox, rose-pine, tokyonight)
 
 ## How to run
 

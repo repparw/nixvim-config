@@ -14,6 +14,14 @@
     maplocalleader = " ";
   };
 
+  highlightOverride = {
+    highlightOverride = {
+      LineNr.bg = null;
+      LineNrAbove.bg = null;
+      LineNrBelow.bg = null;
+    };
+  };
+
   diagnostics = {
     virtual_lines = {
       current_line = true;
