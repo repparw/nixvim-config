@@ -28,7 +28,7 @@
           enable_cursor_planning_mode = true;
         };
         copilot = {
-          model = "o4-mini";
+          model = "gemini-2.5-pro";
         };
       };
     };
