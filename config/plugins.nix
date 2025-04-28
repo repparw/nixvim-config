@@ -28,7 +28,7 @@
           enable_cursor_planning_mode = true;
         };
         copilot = {
-          model = "claude-3.5-sonnet";
+          model = "o4-mini";
         };
       };
     };
