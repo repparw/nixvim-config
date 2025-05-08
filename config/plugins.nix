@@ -28,7 +28,7 @@
           enable_cursor_planning_mode = true;
         };
         copilot = {
-          model = "gemini-2.5-pro";
+          model = "claude-3.5-sonnet";
         };
       };
     };
