@@ -51,4 +51,6 @@
     undofile = true;
     conceallevel = 1;
   };
+
+  performance.byteCompileLua.enable = true;
 }
