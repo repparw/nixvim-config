@@ -1,8 +1,4 @@
-{
-  config,
-  lib,
-  ...
-}: {
+{helpers, ...}: {
   plugins = {
     jdtls = {
       enable = true;
@@ -24,7 +20,7 @@
     copilot-cmp.enable = true;
 
     avante = {
-      enable = lib.mkDefault true;
+      enable = helpers.enableExceptInTests;
       settings = {
         provider = "copilot";
         behaviour = {
@@ -100,7 +96,7 @@
       };
     };
     obsidian = {
-      enable = lib.mkDefault true;
+      enable = helpers.enableExceptInTests;
       settings = {
         workspaces = [
           {
