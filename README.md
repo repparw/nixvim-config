@@ -38,7 +38,7 @@ Descriptions of all the config files/plugins used in this configuration.
 ## How to run
 
 > ```bash
-> nix run github:mikaelfangel/nixvim-config
+> nix run github:repparw/nixvim-config
 > ```
 
 ## Installing
