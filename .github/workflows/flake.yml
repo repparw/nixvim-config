@@ -14,11 +14,16 @@ jobs:
       - name: Install Nix
         uses: DeterminateSystems/nix-installer-action@main
       - name: Update flake.lock
-        env:
-          GH_TOKEN: ${{ secrets.MY_TOKEN }}
         uses: DeterminateSystems/update-flake-lock@main
         with:
           pr-title: "flake: update flake.lock" # Title of PR to be created
           pr-labels: |                  # Labels to be set on the PR
             dependencies
             automated
+          token: ${{ secrets.MY_TOKEN }}
+          pr-body: |
+            Automated changes by the [update-flake-lock](https://github.com/DeterminateSystems/update-flake-lock) GitHub Action.
+
+            ```
+            {{ env.GIT_COMMIT_MESSAGE }}
+            ```
