@@ -23,37 +23,24 @@
       perSystem = {system, ...}: let
         nixvimLib = nixvim.lib.${system};
         nixvim' = nixvim.legacyPackages.${system};
-        baseModule = import ./config;
         nixvimModule = {
-          inherit system;
-          module = baseModule;
+          inherit system; # or alternatively, set `pkgs`
+          module = import ./config; # import the module directly
+          # You can use `extraSpecialArgs` to pass additional arguments to your module files
           extraSpecialArgs = {
             # inherit (inputs) foo;
           };
         };
-        # Create a test module that disables problematic plugins
-        testModule = {
-          inherit system;
-          module = {...}: {
-            imports = [baseModule];
-            config.plugins = {
-              obsidian.enable = false;
-              avante.enable = false;
-            };
-          };
-          extraSpecialArgs = {
-            # inherit (inputs) foo;
-          };
-        };
+
         nvim = nixvim'.makeNixvimWithModule nixvimModule;
       in {
         checks = {
-          # Use the testModule for checks instead of the main module
-          default = nixvimLib.check.mkTestDerivationFromNixvimModule testModule;
+          # Run `nix flake check .` to verify that your config is not broken
+          default = nixvimLib.check.mkTestDerivationFromNixvimModule nixvimModule;
         };
 
         packages = {
-          # Keep the default package using the original configuration
+          # Lets you run `nix run .` to start nixvim
           default = nvim;
         };
       };
