@@ -17,7 +17,7 @@ on:
 jobs:
   check:
     runs-on: ubuntu-latest
-    if: github.event_name != 'push' || github.event.commits[0].message !~ '^Merge pull request'
+    if: github.event_name != 'push' || !contains(github.event.commits[0].message, 'Merge pull request')
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
