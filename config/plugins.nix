@@ -1,4 +1,8 @@
-{helpers, ...}: {
+{
+  helpers,
+  pkgs,
+  ...
+}: {
   plugins = {
     jdtls = {
       enable = true;
@@ -273,6 +277,7 @@
     cmp-path.enable = true;
     vimtex = {
       enable = true;
+      texlivePackage = pkgs.texlive.combined.scheme-full;
       settings = {
         compiler_method = "latexmk";
         compiler_engine = "xelatex";
