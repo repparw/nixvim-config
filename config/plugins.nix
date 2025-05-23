@@ -316,17 +316,15 @@
               }
             end'';
         formatters_by_ft = {
-          lua = ["stylua"];
-          nix = ["alejandra"];
-          #rb = [ "rufo" ];
-          sh = ["beautysh"];
-          typescript = [
-            "biome"
-            "prettier"
-          ];
-          json = ["biome"];
           css = ["prettier"];
           html = ["prettier"];
+          json = ["biome"];
+          lua = ["stylua"];
+          md = ["marksman"];
+          nix = ["alejandra"];
+          sh = ["beautysh"];
+          typescript = ["biome" "prettier"];
+          #rb = [ "rufo" ];
         };
       };
     };
@@ -681,4 +679,12 @@
       };
     };
   };
+  extraPackages = with pkgs; [
+    stylua
+    biome
+    nodePackages.prettier
+    beautysh
+    marksman
+    alejandra
+  ];
 }
