@@ -32,7 +32,7 @@
           enable_cursor_planning_mode = true;
         };
         copilot = {
-          model = "claude-sonnet-4";
+          model = "claude-3.5-sonnet";
         };
       };
       luaConfig.post = ''
