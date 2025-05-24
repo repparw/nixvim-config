@@ -19,7 +19,6 @@ Descriptions of all the config files/plugins used in this configuration.
 | notify | Notification system for Neovim |
 | obsidian | Obsidian note-taking integration |
 | telescope | Powerful fuzzy finder with multiple extensions |
-| todo-comments | Highlight and search TODO comments |
 | treesitter | Enhanced syntax highlighting and code understanding |
 | vimtex | Comprehensive LaTeX support |
 | web-devicons | Adds filetype icons |

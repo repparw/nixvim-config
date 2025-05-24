@@ -12,7 +12,6 @@
     which-key.enable = true;
     gitsigns.enable = true;
     colorizer.enable = true;
-    todo-comments.enable = true;
     web-devicons.enable = true;
 
     nvim-surround.enable = true;
