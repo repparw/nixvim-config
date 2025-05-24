@@ -50,7 +50,7 @@
           vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<C-s>', true, true, true), 'v', true)
         end
 
-        -- NOTE: most templates are inspired from ChatGPT.nvim -> chatgpt-actions.json
+        -- NOTE most templates are inspired from ChatGPT.nvim -> chatgpt-actions.json
         local avante_grammar_correction = 'Correct the text to standard English, but keep any code blocks inside intact.'
         local avante_keywords = 'Extract the main keywords from the following text'
         local avante_code_readability_analysis = [[
@@ -685,5 +685,7 @@
     beautysh
     marksman
     alejandra
+
+    ripgrep
   ];
 }
