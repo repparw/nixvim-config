@@ -61,9 +61,12 @@
       mode = "n";
     }
     {
-      action = "\"_dP";
+      action = "\"+p";
       key = "<leader>p";
       mode = "n";
+      options = {
+        desc = "Paste from clipboard";
+      };
     }
     {
       action = "v:count == 0 ? 'gj' : 'j'";
