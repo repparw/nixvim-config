@@ -528,7 +528,7 @@
     cmp-path.enable = true;
     vimtex = {
       enable = true;
-      texlivePackage = pkgs.texlive.combined.scheme-full;
+      texlivePackage = pkgs.texliveFull;
       settings = {
         compiler_method = "latexmk";
         compiler_engine = "xelatex";
