@@ -319,7 +319,6 @@
           html = ["prettier"];
           json = ["biome"];
           lua = ["stylua"];
-          md = ["marksman"];
           nix = ["alejandra"];
           sh = ["beautysh"];
           typescript = ["biome" "prettier"];
@@ -683,7 +682,6 @@
     biome
     nodePackages.prettier
     beautysh
-    marksman
     alejandra
 
     ripgrep
