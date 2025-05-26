@@ -2,11 +2,18 @@
   helpers,
   pkgs,
   ...
-}: {
+}:
+{
   plugins = {
     jdtls = {
       enable = true;
-      settings.cmd = ["java" "-data" ''''${XDG_CACHE_HOME}/jdtls/workspace'' "-configuration" ''''${XDG_CACHE_HOME}/jdtls/config''];
+      settings.cmd = [
+        "java"
+        "-data"
+        ''''${XDG_CACHE_HOME}/jdtls/workspace''
+        "-configuration"
+        ''''${XDG_CACHE_HOME}/jdtls/config''
+      ];
     };
 
     which-key.enable = true;
@@ -315,13 +322,16 @@
               }
             end'';
         formatters_by_ft = {
-          css = ["prettier"];
-          html = ["prettier"];
-          json = ["biome"];
-          lua = ["stylua"];
-          nix = ["alejandra"];
-          sh = ["beautysh"];
-          typescript = ["biome" "prettier"];
+          css = [ "prettier" ];
+          html = [ "prettier" ];
+          json = [ "biome" ];
+          lua = [ "stylua" ];
+          nix = [ "nixfmt" ];
+          sh = [ "beautysh" ];
+          typescript = [
+            "biome"
+            "prettier"
+          ];
           #rb = [ "rufo" ];
         };
       };
@@ -416,7 +426,9 @@
           {
             __unkeyed-1.__raw = "require('noice').api.statusline.mode.get";
             cond.__raw = "require('noice').api.statusline.mode.has";
-            color = {fg = "#ff9e64";};
+            color = {
+              fg = "#ff9e64";
+            };
           }
         ];
       };
@@ -447,12 +459,14 @@
           "<C-f>" = "cmp.mapping.scroll_docs(4)";
           "<C-y>" = "cmp.mapping.confirm { select = true }";
           "<C-Space>" = "cmp.mapping.complete {}";
-          "<C-l>" = "cmp.mapping(function()
+          "<C-l>" =
+            "cmp.mapping(function()
       if luasnip.expand_or_locally_jumpable() then
         luasnip.expand_or_jump()
       end
     end, { 'i', 's' })";
-          "<C-h>" = "cmp.mapping(function()
+          "<C-h>" =
+            "cmp.mapping(function()
       if luasnip.locally_jumpable(-1) then
         luasnip.jump(-1)
       end
@@ -682,7 +696,7 @@
     biome
     nodePackages.prettier
     beautysh
-    alejandra
+    nixfmt-rfc-style
 
     ripgrep
   ];

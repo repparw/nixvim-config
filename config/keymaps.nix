@@ -1,4 +1,5 @@
-{...}: {
+{ ... }:
+{
   keymaps = [
     {
       action = "<cmd>toggle_qf_list<CR>";
