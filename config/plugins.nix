@@ -2,8 +2,7 @@
   helpers,
   pkgs,
   ...
-}:
-{
+}: {
   plugins = {
     jdtls = {
       enable = true;
@@ -322,12 +321,12 @@
               }
             end'';
         formatters_by_ft = {
-          css = [ "prettier" ];
-          html = [ "prettier" ];
-          json = [ "biome" ];
-          lua = [ "stylua" ];
-          nix = [ "nixfmt" ];
-          sh = [ "beautysh" ];
+          css = ["prettier"];
+          html = ["prettier"];
+          json = ["biome"];
+          lua = ["stylua"];
+          nix = ["nixfmt"];
+          sh = ["beautysh"];
           typescript = [
             "biome"
             "prettier"
@@ -424,7 +423,7 @@
         ];
         sections.lualine_x = [
           {
-            __unkeyed-1.__raw = "require('noice').api.statusline.mode.get";
+            __unkeyed-1.__raw = "require('noice').api.statusline.mode.get_hl";
             cond.__raw = "require('noice').api.statusline.mode.has";
             color = {
               fg = "#ff9e64";
@@ -459,14 +458,12 @@
           "<C-f>" = "cmp.mapping.scroll_docs(4)";
           "<C-y>" = "cmp.mapping.confirm { select = true }";
           "<C-Space>" = "cmp.mapping.complete {}";
-          "<C-l>" =
-            "cmp.mapping(function()
+          "<C-l>" = "cmp.mapping(function()
       if luasnip.expand_or_locally_jumpable() then
         luasnip.expand_or_jump()
       end
     end, { 'i', 's' })";
-          "<C-h>" =
-            "cmp.mapping(function()
+          "<C-h>" = "cmp.mapping(function()
       if luasnip.locally_jumpable(-1) then
         luasnip.jump(-1)
       end
