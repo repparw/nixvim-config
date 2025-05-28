@@ -1,12 +1,11 @@
-{ ... }:
-{
+{...}: {
   imports = [
     ./keymaps.nix
     ./lsp.nix
     ./plugins.nix
   ];
   files = {
-    "ftplugin/lua.lua" = { };
+    "ftplugin/lua.lua" = {};
   };
 
   globals = {
@@ -21,21 +20,19 @@
     };
   };
 
-  highlightOverride =
-    let
-      transparent = {
-        bg = "none";
-        ctermbg = "none";
-      };
-    in
-    {
-      Normal = transparent;
-      NonText = transparent;
-      SignColumn = transparent;
-      LineNr = transparent;
-      LineNrAbove = transparent;
-      LineNrBelow = transparent;
+  highlightOverride = let
+    transparent = {
+      bg = "none";
+      ctermbg = "none";
     };
+  in {
+    Normal = transparent;
+    NonText = transparent;
+    SignColumn = transparent;
+    LineNr = transparent;
+    LineNrAbove = transparent;
+    LineNrBelow = transparent;
+  };
 
   opts = {
     splitright = true;

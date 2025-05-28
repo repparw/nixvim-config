@@ -555,12 +555,6 @@
     telescope = {
       enable = true;
       keymaps = {
-        "<C-p>" = {
-          action = "git_files";
-          options = {
-            desc = "Find project files";
-          };
-        };
         "<leader>fh" = {
           action = "help_tags";
           options = {

@@ -1,6 +1,24 @@
-{ ... }:
-{
+{...}: {
   keymaps = [
+    {
+      action.__raw = ''
+        -- project files with telescope
+        function()
+          local opts = {} -- define here if you want to define something
+
+        if vim.fn.system("git rev-parse --is-inside-work-tree"):find("true") then
+            require("telescope.builtin").git_files(opts)
+          else
+            require("telescope.builtin").find_files(opts)
+          end
+        end
+      '';
+      key = "<C-p>";
+      mode = "n";
+      options = {
+        desc = "Find project files";
+      };
+    }
     {
       action = "<cmd>toggle_qf_list<CR>";
       key = "<C-c>";
