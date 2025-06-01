@@ -37,7 +37,7 @@
           enable_cursor_planning_mode = true;
         };
         copilot = {
-          model = "claude-sonnet-4";
+          model = "claude-3.5-sonnet";
         };
       };
       luaConfig.post = ''
@@ -321,12 +321,12 @@
               }
             end'';
         formatters_by_ft = {
-          css = ["prettier"];
-          html = ["prettier"];
-          json = ["biome"];
-          lua = ["stylua"];
-          nix = ["nixfmt"];
-          sh = ["beautysh"];
+          css = [ "prettier" ];
+          html = [ "prettier" ];
+          json = [ "biome" ];
+          lua = [ "stylua" ];
+          nix = [ "nixfmt" ];
+          sh = [ "beautysh" ];
           typescript = [
             "biome"
             "prettier"
@@ -458,12 +458,14 @@
           "<C-f>" = "cmp.mapping.scroll_docs(4)";
           "<C-y>" = "cmp.mapping.confirm { select = true }";
           "<C-Space>" = "cmp.mapping.complete {}";
-          "<C-l>" = "cmp.mapping(function()
+          "<C-l>" =
+            "cmp.mapping(function()
       if luasnip.expand_or_locally_jumpable() then
         luasnip.expand_or_jump()
       end
     end, { 'i', 's' })";
-          "<C-h>" = "cmp.mapping(function()
+          "<C-h>" =
+            "cmp.mapping(function()
       if luasnip.locally_jumpable(-1) then
         luasnip.jump(-1)
       end
