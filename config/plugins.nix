@@ -2,7 +2,8 @@
   helpers,
   pkgs,
   ...
-}: {
+}:
+{
   plugins = {
     jdtls = {
       enable = true;
@@ -35,9 +36,6 @@
         behaviour = {
           auto_suggestions = false;
           enable_cursor_planning_mode = true;
-        };
-        copilot = {
-          model = "claude-3.5-sonnet";
         };
       };
       luaConfig.post = ''
