@@ -37,6 +37,9 @@
           auto_suggestions = false;
           enable_cursor_planning_mode = true;
         };
+        providers.copilot = {
+          model = "claude-3.5-sonnet";
+        };
       };
       luaConfig.post = ''
         	  -- prefill edit window with common scenarios to avoid repeating query and submit immediately
