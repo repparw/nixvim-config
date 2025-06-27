@@ -5,17 +5,6 @@
 }:
 {
   plugins = {
-    jdtls = {
-      enable = true;
-      settings.cmd = [
-        "java"
-        "-data"
-        ''''${XDG_CACHE_HOME}/jdtls/workspace''
-        "-configuration"
-        ''''${XDG_CACHE_HOME}/jdtls/config''
-      ];
-    };
-
     which-key.enable = true;
     gitsigns.enable = true;
     colorizer.enable = true;

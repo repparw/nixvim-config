@@ -10,6 +10,7 @@
       marksman.enable = true;
       pyright.enable = true;
       jsonls.enable = true;
+      jdtls.enable = true;
     };
     keymaps = {
       silent = true;
