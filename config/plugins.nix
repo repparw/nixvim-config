@@ -27,7 +27,7 @@
           enable_cursor_planning_mode = true;
         };
         providers.copilot = {
-          model = "claude-3.5-sonnet";
+          model = "claude-sonnet-4";
         };
       };
       luaConfig.post = ''
@@ -357,23 +357,6 @@
             path = "~/Documents/obsidian";
           }
         ];
-        mappings = {
-          "<cr>" = {
-            action = "require('obsidian').util.smart_action";
-            opts = {
-              buffer = true;
-              expr = true;
-            };
-          };
-          gf = {
-            action = "require('obsidian').util.gf_passthrough";
-            opts = {
-              buffer = true;
-              expr = true;
-              noremap = false;
-            };
-          };
-        };
         ui.checkboxes = {
           " " = {
             char = "󰄱";
@@ -631,12 +614,6 @@
               };
               "<C-l>" = {
                 __raw = "require('telescope.actions').send_to_loclist";
-              };
-              "<C-s>" = {
-                __raw = "require('telescope.actions').cycle_previewers_next";
-              };
-              "<C-a>" = {
-                __raw = "require('telescope.actions').cycle_previewers_prev";
               };
             };
             n = {

@@ -1,4 +1,5 @@
-{...}: {
+{ config, lib, ... }:
+{
   keymaps = [
     {
       action.__raw = ''
