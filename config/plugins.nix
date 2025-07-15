@@ -67,7 +67,7 @@
         ]]
         local avante_optimize_code = 'Optimize the following code'
         local avante_summarize = 'Summarize the following text'
-        local avante_translate = 'Translate this into Chinese, but keep any code blocks inside intact'
+        local avante_translate = 'Translate this into Spanish, but keep any code blocks inside intact'
         local avante_explain_code = 'Explain the following code'
         local avante_complete_code = 'Complete the following codes written in ' .. vim.bo.filetype
         local avante_add_docstring = 'Add docstring to the following codes'
