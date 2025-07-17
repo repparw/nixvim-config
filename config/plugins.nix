@@ -512,7 +512,7 @@
     cmp-buffer.enable = true;
     cmp-path.enable = true;
     vimtex = {
-      enable = false;
+      enable = true;
       texlivePackage = pkgs.texliveFull;
       settings = {
         compiler_method = "latexmk";
