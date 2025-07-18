@@ -351,6 +351,7 @@
     obsidian = {
       enable = helpers.enableExceptInTests;
       settings = {
+        "legacy_commands" = false;
         workspaces = [
           {
             name = "obsidian";
