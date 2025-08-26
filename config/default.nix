@@ -1,11 +1,12 @@
-{...}: {
+{ ... }:
+{
   imports = [
     ./keymaps.nix
     ./lsp.nix
     ./plugins.nix
   ];
   files = {
-    "ftplugin/lua.lua" = {};
+    "ftplugin/lua.lua" = { };
   };
 
   globals = {
@@ -20,19 +21,21 @@
     };
   };
 
-  highlightOverride = let
-    transparent = {
-      bg = "none";
-      ctermbg = "none";
+  highlightOverride =
+    let
+      transparent = {
+        bg = "none";
+        ctermbg = "none";
+      };
+    in
+    {
+      Normal = transparent;
+      NonText = transparent;
+      SignColumn = transparent;
+      LineNr = transparent;
+      LineNrAbove = transparent;
+      LineNrBelow = transparent;
     };
-  in {
-    Normal = transparent;
-    NonText = transparent;
-    SignColumn = transparent;
-    LineNr = transparent;
-    LineNrAbove = transparent;
-    LineNrBelow = transparent;
-  };
 
   opts = {
     splitright = true;
@@ -64,6 +67,7 @@
     cursorline = true;
     undofile = true;
     conceallevel = 1;
+    swapfile = false;
   };
 
   performance.byteCompileLua.enable = true;
