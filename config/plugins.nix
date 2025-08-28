@@ -358,7 +358,7 @@
             path = "~/Documents/obsidian";
           }
         ];
-        ui.checkboxes = {
+        checkbox.order = {
           " " = {
             char = "󰄱";
             hl_group = "ObsidianTodo";
