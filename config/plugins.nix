@@ -128,10 +128,6 @@
               desc = 'Select model',
             },
           },
-        }
-
-        require('which-key').add {
-          { '<leader>a', group = 'Avante' },
           {
             mode = { 'n', 'v' },
             {
@@ -219,10 +215,6 @@
               desc = 'Add Tests(ask)',
             },
           },
-        }
-
-        require('which-key').add {
-          { '<leader>a', group = 'Avante' },
           {
             mode = { 'v' },
             {
