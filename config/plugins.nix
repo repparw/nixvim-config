@@ -12,12 +12,6 @@
 
     nvim-surround.enable = true;
 
-    copilot-lua = {
-      enable = true;
-      settings.suggestion.enabled = false;
-    };
-    copilot-cmp.enable = true;
-
     avante = {
       enable = helpers.enableExceptInTests;
       settings = {

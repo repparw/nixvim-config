@@ -21,11 +21,19 @@
       };
     }
     {
-      action = "<cmd>toggle_qf_list<CR>";
-      key = "<C-c>";
+      action = "<cmd>cw<CR>";
+      key = "<C-q>";
       mode = "n";
       options = {
-        desc = "toggle quickfix list";
+        desc = "toggle quickfix window";
+      };
+    }
+    {
+      action = "<cmd>lw<CR>";
+      key = "<C-l>";
+      mode = "n";
+      options = {
+        desc = "toggle location window";
       };
     }
     {
