@@ -6,8 +6,6 @@ Descriptions of all the config files/plugins used in this configuration.
 
 | Name | Description |
 | --- | --- |
-| copilot-lua/copilot-cmp | GitHub Copilot integration with completion support |
-| cmp | Advanced completion with multiple sources including LSP, buffer, path |
 | colorizer | Highlights color codes in files |
 | conform-nvim | Code formatting with support for multiple languages |
 | default.nix | Core configuration |
@@ -29,7 +27,6 @@ Descriptions of all the config files/plugins used in this configuration.
 - Full LSP support with inlay hints and various language servers
 - Extensive telescope integration with fuzzy finding
 - Git integration via gitsigns
-- Advanced completion system with Copilot integration
 - Modern UI elements with noice and notify
 - LaTeX support through vimtex
 - Obsidian note-taking integration
