@@ -21,7 +21,7 @@
           enable_cursor_planning_mode = true;
         };
         providers.copilot = {
-          model = "claude-haiku-4.5";
+          model = "claude-sonnet-4.5";
         };
       };
       luaConfig.post = ''

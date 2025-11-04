@@ -11,7 +11,6 @@ Descriptions of all the config files/plugins used in this configuration.
 | default.nix | Core configuration |
 | gitsigns | Git decorations showing changes in the buffer |
 | keymaps.nix | Custom keybindings for improved workflow |
-| lsp.nix | Language Server Protocol support with multiple language servers |
 | lualine | Sleek and customizable status line |
 | noice | Enhanced UI for cmdline and notifications |
 | notify | Notification system for Neovim |
