@@ -16,13 +16,16 @@
     avante = {
       enable = helpers.enableExceptInTests;
       settings = {
-        provider = "copilot";
+        provider = "gemini";
         behaviour = {
           auto_suggestions = false;
           enable_cursor_planning_mode = true;
         };
         providers.copilot = {
           model = "claude-sonnet-4.5";
+        };
+        providers.gemini = {
+          model = "gemini-2.5-pro";
         };
       };
       luaConfig.post = ''
@@ -404,6 +407,8 @@
         end
       '';
     };
+
+    blink-copilot.enable = true;
 
     vimtex = {
       enable = true;

@@ -38,6 +38,8 @@
     };
 
   opts = {
+    completeopt = "menuone,noselect,popup";
+
     splitright = true;
     splitbelow = true;
     termguicolors = true;
