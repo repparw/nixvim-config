@@ -1,5 +1,4 @@
 {
-  helpers,
   pkgs,
   lib,
   ...
@@ -14,7 +13,7 @@
     nvim-surround.enable = true;
 
     avante = {
-      enable = helpers.enableExceptInTests;
+      enable = lib.nixvim.enableExceptInTests;
       settings = {
         provider = "gemini";
         behaviour = {
@@ -339,7 +338,7 @@
       };
     };
     obsidian = {
-      enable = helpers.enableExceptInTests;
+      enable = lib.nixvim.enableExceptInTests;
       settings = {
         "legacy_commands" = false;
         workspaces = [
