@@ -554,7 +554,7 @@
     biome
     nodePackages.prettier
     beautysh
-    nixfmt-rfc-style
+    nixfmt
 
     ripgrep
   ];
