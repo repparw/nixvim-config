@@ -411,7 +411,7 @@
 
     vimtex = {
       enable = true;
-      texlivePackage = pkgs.texliveFull;
+      texlivePackage = null;
       settings = {
         compiler_method = "latexmk";
         compiler_engine = "xelatex";

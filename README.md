@@ -6,6 +6,9 @@ Descriptions of all the config files/plugins used in this configuration.
 
 | Name | Description |
 | --- | --- |
+| avante | AI-powered coding assistant with Gemini and Claude integration |
+| blink-cmp | Modern completion engine with intelligent suggestions |
+| blink-copilot | GitHub Copilot integration for AI-powered code completions |
 | colorizer | Highlights color codes in files |
 | conform-nvim | Code formatting with support for multiple languages |
 | default.nix | Core configuration |
@@ -14,21 +17,25 @@ Descriptions of all the config files/plugins used in this configuration.
 | lualine | Sleek and customizable status line |
 | noice | Enhanced UI for cmdline and notifications |
 | notify | Notification system for Neovim |
+| nvim-surround | Powerful text surrounding operations (quotes, brackets, tags) |
 | obsidian | Obsidian note-taking integration |
-| telescope | Powerful fuzzy finder with multiple extensions |
+| telescope | Powerful fuzzy finder with multiple extensions (ui-select, frecency, fzf-native, zoxide) |
 | treesitter | Enhanced syntax highlighting and code understanding |
-| vimtex | Comprehensive LaTeX support |
+| vimtex | Comprehensive LaTeX support with XeLaTeX compilation |
 | web-devicons | Adds filetype icons |
 | which-key | Interactive keybinding helper |
 
 ## Notable Features
 
-- Full LSP support with inlay hints and various language servers
-- Extensive telescope integration with fuzzy finding
-- Git integration via gitsigns
-- Modern UI elements with noice and notify
-- LaTeX support through vimtex
-- Obsidian note-taking integration
+- **AI-Powered Coding**: Avante plugin with Gemini 2.5 Pro and Claude Sonnet integration for code generation, editing, and analysis
+- **Smart Completions**: Modern blink-cmp completion engine with GitHub Copilot integration
+- **Full LSP Support**: Inlay hints and various language servers
+- **Extensive Telescope Integration**: Fuzzy finding with ui-select, frecency, fzf-native, and zoxide extensions
+- **Git Integration**: Real-time git decorations via gitsigns
+- **Modern UI Elements**: Enhanced command line and notifications with noice and notify
+- **LaTeX Support**: Comprehensive vimtex integration with XeLaTeX compilation
+- **Obsidian Integration**: Seamless note-taking workflow
+- **Multi-Language Formatting**: Automated code formatting with conform-nvim (Nix, Lua, TypeScript, JSON, CSS, HTML, Shell)
 
 ## How to run
 
