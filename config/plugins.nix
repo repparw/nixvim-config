@@ -12,6 +12,8 @@
 
     nvim-surround.enable = true;
 
+    opencode.enable = true;
+
     avante = {
       enable = lib.nixvim.enableExceptInTests;
       settings = {
