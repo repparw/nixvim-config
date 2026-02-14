@@ -17,16 +17,13 @@
     avante = {
       enable = lib.nixvim.enableExceptInTests;
       settings = {
-        provider = "gemini";
+        provider = "copilot";
         behaviour = {
           auto_suggestions = false;
           enable_cursor_planning_mode = true;
         };
         providers.copilot = {
           model = "claude-sonnet-4.5";
-        };
-        providers.gemini = {
-          model = "gemini-2.5-pro";
         };
       };
       luaConfig.post = ''
