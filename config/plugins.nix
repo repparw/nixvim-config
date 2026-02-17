@@ -305,10 +305,6 @@
           lua = [ "stylua" ];
           nix = [ "nixfmt" ];
           sh = [ "beautysh" ];
-          typescript = [
-            "biome"
-            "prettier"
-          ];
           #rb = [ "rufo" ];
         };
       };
