@@ -176,5 +176,72 @@
         silent = true;
       };
     }
+    {
+      action.__raw = ''function() require("opencode").ask("@this: ", { submit = true }) end'';
+      key = "<C-a>";
+      mode = [
+        "n"
+        "x"
+      ];
+      options = {
+        desc = "Ask opencode…";
+      };
+    }
+    {
+      action.__raw = ''function() require("opencode").select() end'';
+      key = "<C-x>";
+      mode = [
+        "n"
+        "x"
+      ];
+      options = {
+        desc = "Execute opencode action…";
+      };
+    }
+    {
+      action.__raw = ''function() require("opencode").toggle() end'';
+      key = "<C-.>";
+      mode = "n";
+      options = {
+        desc = "Toggle opencode";
+      };
+    }
+    {
+      action.__raw = ''function() return require("opencode").operator("@this ") end'';
+      key = "go";
+      mode = [
+        "n"
+        "x"
+      ];
+      options = {
+        desc = "Add range to opencode";
+        expr = true;
+      };
+    }
+    {
+      action.__raw = ''function() return require("opencode").operator("@this ") .. "_" end'';
+      key = "goo";
+      mode = "n";
+      options = {
+        desc = "Add line to opencode";
+        expr = true;
+      };
+    }
+    {
+      action.__raw = ''function() require("opencode").command("session.half.page.up") end'';
+      key = "<S-C-u>";
+      mode = "n";
+      options = {
+        desc = "Scroll opencode up";
+      };
+    }
+    {
+      action.__raw = ''function() require("opencode").command("session.half.page.down") end'';
+      key = "<S-C-d>";
+      mode = "n";
+      options = {
+        desc = "Scroll opencode down";
+      };
+    }
   ];
 }

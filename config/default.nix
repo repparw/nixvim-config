@@ -39,6 +39,7 @@
 
   opts = {
     completeopt = "menuone,noselect,popup";
+    autoread = true;
 
     splitright = true;
     splitbelow = true;
