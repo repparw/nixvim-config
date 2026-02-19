@@ -15,7 +15,7 @@
               in
               {
                 home-manager.expr = "${flake}.nixosConfigurations.repparw.options.home-manager.users.type.getSubOptions []";
-                nixvim.expr = "${flake}.packages.${pkgs.stdenv.hostPlatform.system}.default.options";
+                nixvim.expr = "${flake}.inputs.nixvim-config.packages.${pkgs.stdenv.hostPlatform.system}.default.options";
               };
           };
         };
