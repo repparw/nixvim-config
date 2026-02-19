@@ -8,10 +8,14 @@
       nixd = {
         enable = true;
         settings = {
-          options = {
-            home-manager.expr = "(builtins.getFlake \".\").homeConfigurations.repparw.options";
-            nixvim.expr = "(builtins.getFlake \".\").packages.${pkgs.stdenv.hostPlatform.system}.default.options";
-          };
+          options =
+            let
+              flake = ''(builtins.getFlake "github:repparw/nix")'';
+            in
+            {
+              home-manager.expr = "${flake}.homeConfigurations.repparw.options";
+              nixvim.expr = "${flake}.packages.${pkgs.stdenv.hostPlatform.system}.default.options";
+            };
         };
       };
       ts_ls.enable = true;
