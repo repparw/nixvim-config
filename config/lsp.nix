@@ -1,23 +1,11 @@
-{ pkgs, ... }:
+{ ... }:
 {
   plugins.lsp = {
     enable = true;
     inlayHints = true;
     servers = {
       lua_ls.enable = true;
-      nixd = {
-        enable = true;
-        settings = {
-          options =
-            let
-              flake = ''(builtins.getFlake "github:repparw/nix")'';
-            in
-            {
-              home-manager.expr = "${flake}.homeConfigurations.repparw.options";
-              nixvim.expr = "${flake}.packages.${pkgs.stdenv.hostPlatform.system}.default.options";
-            };
-        };
-      };
+      nixd.enable = true;
       ts_ls.enable = true;
       marksman.enable = true;
       pyright.enable = true;
