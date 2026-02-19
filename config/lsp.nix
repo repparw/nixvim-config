@@ -1,12 +1,19 @@
-{ ... }:
+{ pkgs, ... }:
 {
-
   plugins.lsp = {
     enable = true;
     inlayHints = true;
     servers = {
       lua_ls.enable = true;
-      nixd.enable = true;
+      nixd = {
+        enable = true;
+        settings = {
+          options = {
+            home-manager.expr = "(builtins.getFlake \".\").homeConfigurations.repparw.options";
+            nixvim.expr = "(builtins.getFlake \".\").packages.${pkgs.stdenv.hostPlatform.system}.default.options";
+          };
+        };
+      };
       ts_ls.enable = true;
       marksman.enable = true;
       pyright.enable = true;
