@@ -21,22 +21,6 @@
     };
   };
 
-  highlightOverride =
-    let
-      transparent = {
-        bg = "none";
-        ctermbg = "none";
-      };
-    in
-    {
-      Normal = transparent;
-      NonText = transparent;
-      SignColumn = transparent;
-      LineNr = transparent;
-      LineNrAbove = transparent;
-      LineNrBelow = transparent;
-    };
-
   opts = {
     completeopt = "menuone,noselect,popup";
     autoread = true;

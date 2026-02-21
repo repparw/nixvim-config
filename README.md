@@ -16,10 +16,8 @@ Descriptions of all the config files/plugins used in this configuration.
 | keymaps.nix | Custom keybindings for improved workflow |
 | lualine | Sleek and customizable status line |
 | noice | Enhanced UI for cmdline and notifications |
-| notify | Notification system for Neovim |
-| nvim-surround | Powerful text surrounding operations (quotes, brackets, tags) |
 | obsidian | Obsidian note-taking integration |
-| telescope | Powerful fuzzy finder with multiple extensions (ui-select, frecency, fzf-native, zoxide) |
+| snacks | Picker for fuzzy finding (files, grep, buffers, etc) |
 | treesitter | Enhanced syntax highlighting and code understanding |
 | vimtex | Comprehensive LaTeX support with XeLaTeX compilation |
 | web-devicons | Adds filetype icons |
@@ -30,9 +28,9 @@ Descriptions of all the config files/plugins used in this configuration.
 - **AI-Powered Coding**: Avante plugin with Gemini 2.5 Pro and Claude Sonnet integration for code generation, editing, and analysis
 - **Smart Completions**: Modern blink-cmp completion engine with GitHub Copilot integration
 - **Full LSP Support**: Inlay hints and various language servers
-- **Extensive Telescope Integration**: Fuzzy finding with ui-select, frecency, fzf-native, and zoxide extensions
+- **Extensive Snacks Picker Integration**: Fuzzy finding with files, grep, buffers, diagnostics, zoxide, and more
 - **Git Integration**: Real-time git decorations via gitsigns
-- **Modern UI Elements**: Enhanced command line and notifications with noice and notify
+- **Modern UI Elements**: Enhanced command line and notifications with noice and snacks
 - **LaTeX Support**: Comprehensive vimtex integration with XeLaTeX compilation
 - **Obsidian Integration**: Seamless note-taking workflow
 - **Multi-Language Formatting**: Automated code formatting with conform-nvim (Nix, Lua, TypeScript, JSON, CSS, HTML, Shell)

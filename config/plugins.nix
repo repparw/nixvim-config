@@ -274,12 +274,72 @@
       '';
     };
 
-    notify = {
+    snacks = {
       enable = true;
       settings = {
-        background_colour = "#000000";
-        timeout = 3000;
-        render = "compact";
+        picker = {
+          ui_select = true;
+          matcher = {
+            frecency = true;
+            cwd_bonus = true;
+          };
+          keys = {
+            j = "down";
+            k = "up";
+            h = "left";
+            l = "right";
+            g = "top";
+            G = "bottom";
+          };
+          win = {
+            input = {
+              keys = {
+                "<C-c>" = false;
+                "<Esc>" = lib.nixvim.mkRaw "function(self) self:close() end";
+              };
+            };
+            list = {
+              wo = {
+                conceallevel = 2;
+                concealcursor = "nvc";
+              };
+            };
+          };
+          icons = {
+            files = {
+              enabled = true;
+              parent_dir = " ";
+              child_dir = " ";
+            };
+          };
+          formatters = {
+            file = {
+              filename_first = true;
+              truncate = 80;
+            };
+          };
+          layout = {
+            preset = "telescope";
+            cycle = true;
+          };
+          sources = {
+            files = {
+              hidden = true;
+              follow = true;
+            };
+            git_files = {
+              hidden = true;
+            };
+          };
+        };
+        styles = {
+          input = {
+            backdrop = false;
+            position = "float";
+            border = "rounded";
+            title_pos = "left";
+          };
+        };
       };
     };
 
@@ -381,8 +441,8 @@
         ];
         sections.lualine_x = [
           {
-            __unkeyed-1.__raw = "require('noice').api.statusline.mode.get_hl";
-            cond.__raw = "require('noice').api.statusline.mode.has";
+            __unkeyed-1 = lib.nixvim.mkRaw "require('noice').api.statusline.mode.get_hl";
+            cond = lib.nixvim.mkRaw "require('noice').api.statusline.mode.has";
             color = {
               fg = "#ff9e64";
             };
@@ -417,129 +477,6 @@
             "-interaction=nonstopmode"
             "-file-line-error"
           ];
-        };
-      };
-    };
-    telescope = {
-      enable = true;
-      keymaps = {
-        "<leader>fh" = {
-          action = "help_tags";
-          options = {
-            desc = "[F]ind [H]elp";
-          };
-        };
-        "<leader>fk" = {
-          action = "keymaps";
-          options = {
-            desc = "[F]ind [K]eymaps";
-          };
-        };
-        "<leader>ff" = {
-          action = "find_files";
-          options = {
-            desc = "[F]ind [F]iles";
-          };
-        };
-        "<leader>fs" = {
-          action = "builtin";
-          options = {
-            desc = "[F]ind [S]elect Telescope";
-          };
-        };
-        "<leader>fw" = {
-          action = "grep_string";
-          options = {
-            desc = "[F]ind current [W]ord";
-          };
-        };
-        "<leader>fg" = {
-          action = "live_grep";
-          options = {
-            desc = "[F]ind by [G]rep";
-          };
-        };
-        "<leader>fD" = {
-          action = "diagnostics";
-          options = {
-            desc = "[F]ind [D]iagnostics";
-          };
-        };
-        "<leader>fd" = {
-          action = "zoxide list";
-          options = {
-            desc = "[F]ind by [D]irectory";
-          };
-        };
-        "<leader>fr" = {
-          action = "resume";
-          options = {
-            desc = "[F]ind [R]esume";
-          };
-        };
-        "<leader>f." = {
-          action = "oldfiles";
-          options = {
-            desc = "[F]ind Recent Files (\".\" for repeat)";
-          };
-        };
-        "<leader><leader>" = {
-          action = "buffers";
-          options = {
-            desc = "[F]ind [B]uffers";
-          };
-        };
-      };
-
-      extensions = {
-        ui-select.enable = true;
-        frecency.enable = true;
-        fzf-native.enable = true;
-        zoxide.enable = true;
-      };
-
-      settings = {
-        defaults = {
-          mappings = {
-            i = {
-              "<C-q>" = {
-                __raw = "require('telescope.actions').send_to_qflist";
-              };
-              "<C-l>" = {
-                __raw = "require('telescope.actions').send_to_loclist";
-              };
-            };
-            n = {
-              q = {
-                __raw = "require('telescope.actions').close";
-              };
-            };
-          };
-
-          preview = {
-            treesitter = true;
-          };
-
-          color_devicons = true;
-          set_env = {
-            COLORTERM = "truecolor";
-          };
-          prompt_prefix = "   ";
-          selection_caret = "  ";
-          entry_prefix = "  ";
-          initial_mode = "insert";
-
-          extensions = {
-            "ui-select" = {
-              __raw = "require('telescope.themes').get_dropdown()";
-            };
-          };
-        };
-        pickers = {
-          find_files = {
-            hidden = true;
-            follow = true;
-          };
         };
       };
     };

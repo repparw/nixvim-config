@@ -1,25 +1,35 @@
 { config, lib, ... }:
+let
+  picker = key: method: desc: {
+    action = lib.nixvim.mkRaw ''function() require("snacks.picker").${method}() end'';
+    key = "${key}";
+    mode = "n";
+    options.desc = desc;
+  };
+in
 {
   keymaps = [
     {
-      action.__raw = ''
-        -- project files with telescope
+      action = lib.nixvim.mkRaw ''
         function()
-          local opts = {} -- define here if you want to define something
-
-        if vim.fn.system("git rev-parse --is-inside-work-tree"):find("true") then
-            require("telescope.builtin").git_files(opts)
+          if vim.fn.system("git rev-parse --is-inside-work-tree"):find("true") then
+            require("snacks.picker").git_files()
           else
-            require("telescope.builtin").find_files(opts)
+            require("snacks.picker").smart()
           end
-        end
-      '';
+        end'';
       key = "<C-p>";
       mode = "n";
-      options = {
-        desc = "Find project files";
-      };
+      options.desc = "Find project files";
     }
+    (picker "<leader>fh" "help" "[F]ind [H]elp")
+    (picker "<leader>fk" "keymaps" "[F]ind [K]eymaps")
+    (picker "<leader>fg" "grep" "[F]ind by [G]rep")
+    (picker "<leader>fD" "diagnostics" "[F]ind [D]iagnostics")
+    (picker "<leader>fd" "zoxide" "[F]ind by [D]irectory")
+    (picker "<leader><space>" "resume" "Resume last search")
+    (picker "gd" "lsp_definitions" "[G]oto [D]efinition")
+    (picker "gD" "lsp_declarations" "[G]oto [D]eclaration")
     {
       action = "<cmd>cw<CR>";
       key = "<C-q>";
@@ -177,7 +187,7 @@
       };
     }
     {
-      action.__raw = ''function() require("opencode").ask("@this: ", { submit = true }) end'';
+      action = lib.nixvim.mkRaw ''function() require("opencode").ask("@this: ", { submit = true }) end'';
       key = "<C-a>";
       mode = [
         "n"
@@ -188,7 +198,7 @@
       };
     }
     {
-      action.__raw = ''function() require("opencode").select() end'';
+      action = lib.nixvim.mkRaw ''function() require("opencode").select() end'';
       key = "<C-x>";
       mode = [
         "n"
@@ -199,7 +209,7 @@
       };
     }
     {
-      action.__raw = ''function() require("opencode").toggle() end'';
+      action = lib.nixvim.mkRaw ''function() require("opencode").toggle() end'';
       key = "<C-.>";
       mode = "n";
       options = {
@@ -207,7 +217,7 @@
       };
     }
     {
-      action.__raw = ''function() return require("opencode").operator("@this ") end'';
+      action = lib.nixvim.mkRaw ''function() return require("opencode").operator("@this ") end'';
       key = "go";
       mode = [
         "n"
@@ -219,7 +229,7 @@
       };
     }
     {
-      action.__raw = ''function() return require("opencode").operator("@this ") .. "_" end'';
+      action = lib.nixvim.mkRaw ''function() return require("opencode").operator("@this ") .. "_" end'';
       key = "goo";
       mode = "n";
       options = {
@@ -228,7 +238,7 @@
       };
     }
     {
-      action.__raw = ''function() require("opencode").command("session.half.page.up") end'';
+      action = lib.nixvim.mkRaw ''function() require("opencode").command("session.half.page.up") end'';
       key = "<S-C-u>";
       mode = "n";
       options = {
@@ -236,7 +246,7 @@
       };
     }
     {
-      action.__raw = ''function() require("opencode").command("session.half.page.down") end'';
+      action = lib.nixvim.mkRaw ''function() require("opencode").command("session.half.page.down") end'';
       key = "<S-C-d>";
       mode = "n";
       options = {
