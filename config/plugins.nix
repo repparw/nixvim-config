@@ -481,6 +481,7 @@
       };
     };
   };
+
   extraPackages = with pkgs; [
     stylua
     biome

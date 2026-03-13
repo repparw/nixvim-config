@@ -1,5 +1,7 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
+  plugins.schemastore.enable = true;
+
   plugins.lsp = {
     enable = true;
     inlayHints = true;
@@ -8,6 +10,7 @@
       jsonls.enable = true;
       lua_ls.enable = true;
       marksman.enable = true;
+      yamlls.enable = true;
       nixd.enable = true;
       pyright.enable = true;
       terraformls.enable = true;
