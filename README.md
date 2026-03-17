@@ -6,7 +6,7 @@ Descriptions of all the config files/plugins used in this configuration.
 
 | Name | Description |
 | --- | --- |
-| avante | AI-powered coding assistant with Gemini and Claude integration |
+| codecompanion | AI-powered coding assistant for code generation and analysis |
 | blink-cmp | Modern completion engine with intelligent suggestions |
 | blink-copilot | GitHub Copilot integration for AI-powered code completions |
 | colorizer | Highlights color codes in files |
@@ -25,7 +25,7 @@ Descriptions of all the config files/plugins used in this configuration.
 
 ## Notable Features
 
-- **AI-Powered Coding**: Avante plugin with Gemini 2.5 Pro and Claude Sonnet integration for code generation, editing, and analysis
+- **AI-Powered Coding**: CodeCompanion plugin for AI-powered code generation, editing, and analysis
 - **Smart Completions**: Modern blink-cmp completion engine with GitHub Copilot integration
 - **Full LSP Support**: Inlay hints and various language servers
 - **Extensive Snacks Picker Integration**: Fuzzy finding with files, grep, buffers, diagnostics, zoxide, and more
