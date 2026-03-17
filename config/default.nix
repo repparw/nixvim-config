@@ -3,7 +3,7 @@
   imports = [
     ./keymaps.nix
     ./lsp.nix
-    ./plugins.nix
+    ./plugins
   ];
   files = {
     "ftplugin/lua.lua" = { };
