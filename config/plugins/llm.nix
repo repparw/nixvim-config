@@ -5,8 +5,6 @@
 }:
 {
   plugins = {
-    opencode.enable = true;
-
     codecompanion = {
       enable = lib.nixvim.enableExceptInTests;
       settings = {
