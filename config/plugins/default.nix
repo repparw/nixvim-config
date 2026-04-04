@@ -17,7 +17,7 @@
   extraPackages = with pkgs; [
     stylua
     biome
-    nodePackages.prettier
+    prettierd
     beautysh
     nixfmt
     ripgrep
