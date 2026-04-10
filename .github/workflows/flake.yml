@@ -8,12 +8,16 @@ on:
 jobs:
   lockfile:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
       - name: Install Nix
         uses: DeterminateSystems/nix-installer-action@main
       - name: Update flake.lock
+        id: update
         uses: DeterminateSystems/update-flake-lock@main
         with:
           pr-title: "flake: update flake.lock" # Title of PR to be created
@@ -27,3 +31,10 @@ jobs:
             ```
             {{ env.GIT_COMMIT_MESSAGE }}
             ```
+      - name: Enable automerge
+        if: steps.update.outputs.pull-request-operation == 'created'
+        uses: peter-evans/enable-pull-request-automerge@v3
+        with:
+          token: ${{ secrets.MY_TOKEN }}
+          pull-request-number: ${{ steps.update.outputs.pull-request-number }}
+          merge-method: squash
