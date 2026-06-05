@@ -31,10 +31,6 @@
           nixvim' = nixvim.legacyPackages.${system};
           pkgs = import inputs.nixpkgs {
             inherit system;
-            # Workaround for nixvim issue #4261: warnOnInstantiate on nvim-treesitter-legacy
-            # fires during vimUtils.packDir structural checks even though we don't use the legacy package.
-            # https://github.com/nix-community/nixvim/issues/4261
-            config.allowAliases = false;
           };
           nixvimModule = {
             inherit pkgs;
