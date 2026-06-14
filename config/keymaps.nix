@@ -12,15 +12,19 @@ in
     {
       action = lib.nixvim.mkRaw ''
         function()
+          local file_source = "files"
           if vim.fn.system("git rev-parse --is-inside-work-tree"):find("true") then
-            require("snacks.picker").git_files()
-          else
-            require("snacks.picker").smart()
+            file_source = "git_files"
           end
+
+          require("snacks.picker").pick({
+            title = "Find files and grep",
+            multi = { file_source, "grep" },
+          })
         end'';
       key = "<C-p>";
       mode = "n";
-      options.desc = "Find project files";
+      options.desc = "Find files and grep";
     }
     (picker "<leader>fh" "help" "[F]ind [H]elp")
     (picker "<leader>fk" "keymaps" "[F]ind [K]eymaps")
