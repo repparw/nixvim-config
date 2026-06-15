@@ -19,7 +19,48 @@ in
 
           require("snacks.picker").pick({
             title = "Find files and grep",
-            multi = { file_source, "grep" },
+            live = true,
+            supports_live = true,
+            format = "file",
+            filter = {
+              transform = function(_, filter)
+                filter.pattern = filter.search
+              end,
+            },
+            finder = function(opts, ctx)
+              local files = require("snacks.picker.source.files")
+              local git = require("snacks.picker.source.git")
+              local grep = require("snacks.picker.source.grep")
+
+              local file_opts = Snacks.config.merge({}, opts, opts.sources[file_source])
+              local grep_opts = Snacks.config.merge({}, opts, opts.sources.grep)
+              local file_filter = ctx.filter:clone()
+              file_filter.search = ""
+
+              local file_ctx = ctx:clone(file_opts)
+              file_ctx.filter = file_filter
+
+              local results = {
+                file_source == "git_files" and git.files(file_opts, file_ctx) or files.files(file_opts, file_ctx),
+                grep.grep(grep_opts, ctx),
+              }
+
+              return function(cb)
+                for source_id, result in ipairs(results) do
+                  if type(result) == "table" then
+                    for _, item in ipairs(result) do
+                      item.source_id = source_id
+                      cb(item)
+                    end
+                  elseif type(result) == "function" then
+                    result(function(item)
+                      item.source_id = source_id
+                      cb(item)
+                    end)
+                  end
+                end
+              end
+            end,
           })
         end'';
       key = "<C-p>";
