@@ -37,14 +37,20 @@
               # (nixpkgs PR #572951, issue #573730): the pinned nixos-unstable
               # (7fd4004, 26.11 freeze) ships the stale hash and nixvim's
               # closure builds typescript-language-server from this package
-              # set. Retire once the pinned input carries the fix.
+              # set. Version-gated: older locks (5.3.0, yarn-based) have no
+              # fetchPnpmDeps argument, and newer versions pass through, so
+              # this retires itself once the pinned input moves past 6.0.2.
               (final: prev: {
-                typescript-language-server = prev.typescript-language-server.override {
-                  fetchPnpmDeps = attrs:
-                    prev.fetchPnpmDeps (attrs // {
-                      hash = "sha256-xR/EF60lVBsITKgH7wCM2wHM46PFQevD51KfCENSUH4=";
-                    });
-                };
+                typescript-language-server =
+                  if prev.typescript-language-server.version or "" == "6.0.2" then
+                    prev.typescript-language-server.override {
+                      fetchPnpmDeps = attrs:
+                        prev.fetchPnpmDeps (attrs // {
+                          hash = "sha256-xR/EF60lVBsITKgH7wCM2wHM46PFQevD51KfCENSUH4=";
+                        });
+                    }
+                  else
+                    prev.typescript-language-server;
               })
             ];
           };
