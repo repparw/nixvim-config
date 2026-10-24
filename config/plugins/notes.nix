@@ -14,16 +14,10 @@
           path = "~/Documents/obsidian";
         }
       ];
-      checkbox.order = {
-        " " = {
-          char = "󰄱";
-          hl_group = "ObsidianTodo";
-        };
-        x = {
-          char = "";
-          hl_group = "ObsidianDone";
-        };
-      };
+      checkbox.order = lib.mkForce [
+        " "
+        "x"
+      ];
     };
   };
 }

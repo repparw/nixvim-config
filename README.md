@@ -6,9 +6,7 @@ Descriptions of all the config files/plugins used in this configuration.
 
 | Name | Description |
 | --- | --- |
-| codecompanion | AI-powered coding assistant for code generation and analysis |
 | blink-cmp | Modern completion engine with intelligent suggestions |
-| blink-copilot | GitHub Copilot integration for AI-powered code completions |
 | colorizer | Highlights color codes in files |
 | conform-nvim | Code formatting with support for multiple languages |
 | default.nix | Core configuration |
@@ -25,8 +23,7 @@ Descriptions of all the config files/plugins used in this configuration.
 
 ## Notable Features
 
-- **AI-Powered Coding**: CodeCompanion plugin for AI-powered code generation, editing, and analysis
-- **Smart Completions**: Modern blink-cmp completion engine with GitHub Copilot integration
+- **Smart Completions**: Modern blink-cmp completion engine with language-server, path, snippet, and buffer sources
 - **Full LSP Support**: Inlay hints and various language servers
 - **Extensive Snacks Picker Integration**: Fuzzy finding with files, grep, buffers, diagnostics, zoxide, and more
 - **Git Integration**: Real-time git decorations via gitsigns

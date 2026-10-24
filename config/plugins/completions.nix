@@ -1,12 +1,9 @@
 {
-  pkgs,
   lib,
   ...
 }:
 {
   plugins = {
-    blink-copilot.enable = true;
-
     blink-cmp = {
       enable = true;
       settings = {
@@ -23,16 +20,7 @@
             "path"
             "snippets"
             "buffer"
-            "blink-copilot"
           ];
-          providers = {
-            blink-copilot = {
-              name = "Copilot";
-              module = "blink-copilot";
-              score_offset = 100;
-              async = true;
-            };
-          };
         };
       };
     };
