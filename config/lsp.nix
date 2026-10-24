@@ -6,7 +6,6 @@
     enable = true;
     inlayHints = true;
     servers = {
-      jdtls.enable = true;
       jsonls.enable = true;
       lua_ls.enable = true;
       marksman.enable = true;
