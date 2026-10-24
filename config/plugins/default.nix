@@ -7,7 +7,6 @@
   imports = [
     ./completions.nix
     ./editing.nix
-    ./llm.nix
     ./notes.nix
     ./treesitter.nix
     ./ui.nix

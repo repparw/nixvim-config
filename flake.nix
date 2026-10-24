@@ -48,6 +48,15 @@
           checks = {
             # Run `nix flake check .` to verify that your config is not broken
             default = nixvimLib.check.mkTestDerivationFromNixvimModule nixvimModule;
+            startup = pkgs.runCommand "nixvim-startup" { } ''
+              export HOME="$TMPDIR/home"
+              mkdir -p "$HOME/Documents/obsidian"
+              ${nvim}/bin/nvim --headless -c 'luafile ${./tests/startup.lua}' > startup.log 2>&1 || {
+                cat startup.log
+                exit 1
+              }
+              touch "$out"
+            '';
           };
 
           packages = {
